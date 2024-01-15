@@ -1,49 +1,32 @@
 <template>
-    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="javascript:void(0)">Logo</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="mynavbar">
-            <ul class="navbar-nav me-auto">
-              <li class="nav-item">
-                <a class="nav-link" @click="login()">Войти</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="javascript:void(0)">Link</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="javascript:void(0)">Link</a>
-              </li>
-            </ul>
-            <form class="d-flex">
-              <input class="form-control me-2" type="text" placeholder="Search">
-              <button class="btn btn-primary" type="button">Search</button>
-            </form>
-          </div>
+    <div class="p-6 max-w-sm mx-auto bg-white rounded-xl shadow-md flex items-center space-x-4">
+        <div class="flex-shrink-0">
+          <img class="h-12 w-12" src="/img/logo.svg" alt="ChitChat Logo">
         </div>
-      </nav>
+        <div>
+          <div class="text-xl font-medium text-black">ChitChat</div>
+          <p class="text-gray-500">You have a new message!</p>
+        </div>
+      </div>
       <h1 class="text-3xl font-bold underline ">
         Hello world!
       </h1>
-      <div class="container-fluid mt-5">
-        <div class="row" >
-            <div class="toast show mt-3 ms-3" v-for="post in posts" :key="post.id">
+
+      <div class="flex bg-white mx-auto gap-10 w-3/4 flex-wrap h-450px">
+            <div class=" shadow-md mt-3 w-80 max-h-3/4" v-for="post in posts" :key="post.id">
                 <div class="toast-header">
                   {{ post.title }}
                 </div>
                 <div class="toast-body">
                   {{ post.body }}
                 </div>
-                <div class="toast-footer">
+                <div class="toast-footer mb-2 w-full h-20">
                     <button @click="like(post.id)">
                         <i class="far fa-heart"></i>
                     </button>
                     <p class="text-black">{{post.like}}</p>
                 </div>
               </div>
-        </div>
       </div>
 
 
