@@ -1,17 +1,20 @@
 <template>
-    <div class="container mt-5">
-        <h2>Авторизация</h2>
-        <form class="form">
-            <div class="mb-3 mt-3">
-                <label for="email" class="form-label">Email:</label>
-                <input type="email" class="form-control" id="email" placeholder="Enter email" v-model="form.email" name="email">
-            </div>
-            <div class="mb-3 mt-3">
-                <input class="btn btn-primary" type="submit" @click="send()" value="Отправить">
-            </div>
-            <a href="" @click="register()">Sign Up</a>
-        </form>
+    <div class="conatainer w-[1903px] bg-gray-100 h-screen flex justify-center items-center">
+        <div class="form bg-white shadow-md w-[450px] h-[750px] flex flex-col justify-center items-center gap-[150px]">
+                <div class="form_title flex justify-center">
+                    <p class="p-5 text-[36px]" >Авторизация</p>
+                </div>
+                <div class="form_body flex flex-col items-center gap-y-[35px]">
+                    <input type="text" class=" pl-3 text-xl border-gray-400 focus:border-black h-[35px] w-1/2 border outline-none" placeholder="Логин">
+                    <input type="text" class="outline-none  pl-3 text-xl border-gray-400 focus:border-black h-[35px] w-1/2 border" placeholder="Пароль">
+                </div>
+                <div class="form_footer">
+                    <button class="text-xl">Войти</button>
+                </div>
+
+        </div>
     </div>
+
 </template>
 
 <script setup>
