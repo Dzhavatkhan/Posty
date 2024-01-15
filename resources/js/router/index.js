@@ -3,6 +3,7 @@ import posts from "../components/posts/posts.vue"
 import notFound from "../components/notFound.vue"
 import login from '../components/auth/login.vue'
 import register from '../components/auth/register.vue'
+import profile from "../components/auth/profile.vue"
 const routes = [
     {
         path: '/',
@@ -19,6 +20,10 @@ const routes = [
     {
         path: '/signUp',
         component: register
+    },
+    {
+        path: '/profile',
+        component: profile
     },
 ]
 const router = createRouter({

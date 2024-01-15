@@ -1,23 +1,20 @@
 <template>
-    <div class="container mt-5">
-        <h2>Регистрация</h2>
-        <form class="form">
-            <div class="mb-3 mt-3">
-                <label for="name" class="form-label">Name</label>
-                <input type="text" class="form-control" id="name" placeholder="Enter name" v-model="form.name" name="email">
+    <div class="flex justify-center items-center bg-gray-100 w-screen h-screen">
+        <div class=" form_wrapper w-[450px] h-[550px] bg-white shadow-md flex flex-col items-center gap-y-12">
+            <div class="form_title flex justify-center items-center text-[36px] py-5">
+                Регистрация
             </div>
-            <div class="mb-3 mt-3">
-                <label for="email" class="form-label">Email:</label>
-                <input type="email" class="form-control" id="email" placeholder="Enter email" v-model="form.email" name="email">
+            <div class="form_body flex flex-col items-center gap-10">
+                <input type="text" v-model="form.name" class="rounded-md w-[300px] h-10 border-gray-400 border focus:border-black outline-none pl-5" placeholder="Логин">
+                <input type="text" v-model="form.email" class="rounded-md w-[300px] h-10 border-gray-400 border focus:border-black outline-none pl-5" placeholder="Почта">
+                <input type="text" v-model="form.password" class="rounded-md w-[300px] h-10 border-gray-400 border focus:border-black outline-none pl-5" placeholder="Пароль">
+                <input type="text" v-model="form.password_conf" class="rounded-md w-[300px] h-10 border-gray-400 border focus:border-black outline-none pl-5" placeholder="Подтвердите пароль">
             </div>
-            <div class="mb-3 mt-3">
-                <label for="email" class="form-label">Email:</label>
-                <input type="password" class="form-control" id="email" placeholder="Enter password" v-model="form.password" name="email">
+            <div class=" form_footer flex flex-col items-center w-full h-18 gap-y-2">
+                <button class="border cursor-pointer duration-[0.5s] h-10 bg-black text-white hover:border-black w-[300px] hover:bg-opacity-0 hover:text-black">Отправить</button>
+                <a class="underline block w-50 cursor-pointer text-blue-400 hover:text-blue-600">У вас уже есть аккаунт?</a>
             </div>
-            <div class="mb-3 mt-3">
-                <input class="btn btn-primary" type="submit" @click="send()" value="Отправить">
-            </div>
-        </form>
+        </div>
     </div>
 </template>
 
@@ -27,7 +24,8 @@ import { ref } from "vue";
     let form = ref({
         name: '',
         email: '',
-        password: ''
+        password: '',
+        password_conf: ''
     })
     const send = () => {
         console.log(form.value.email, form.value.name, form.value.password);
@@ -35,6 +33,3 @@ import { ref } from "vue";
     }
 </script>
 
-<style lang="scss" scoped>
-
-</style>

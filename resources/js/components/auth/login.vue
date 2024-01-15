@@ -1,31 +1,36 @@
 <template>
-    <div class="container mt-5">
-        <h2>Авторизация</h2>
-        <form class="form">
-            <div class="mb-3 mt-3">
-                <label for="email" class="form-label">Email:</label>
-                <input type="email" class="form-control" id="email" placeholder="Enter email" v-model="form.email" name="email">
-            </div>
-            <div class="mb-3 mt-3">
-                <input class="btn btn-primary" type="submit" @click="send()" value="Отправить">
-            </div>
-            <a href="" @click="register()">Sign Up</a>
-        </form>
+    <div class="conatainer w-[99vw] bg-gray-100 h-screen flex justify-center items-center">
+        <div class="form bg-white shadow-md w-[450px] h-[550px] flex flex-col justify-center items-center gap-[75px]">
+                <div class="form_title flex justify-center">
+                    <p class=" text-[36px]" >Авторизация</p>
+                </div>
+                <div class="form_body flex flex-col items-center gap-y-[35px]">
+                    <input v-model="form.login" type="text" class=" rounded-md pl-3 text-xl border-gray-400 focus:border-black h-[35px] w-[215px] border outline-none" placeholder="Логин">
+                    <input v-model="form.password" type="text" class=" rounded-md outline-none w-[215px] pl-3 text-xl border-gray-400 focus:border-black h-[35px] border" placeholder="Пароль">
+                </div>
+                <div class="form_footer">
+                    <button @click="send()" class="text-xl hover:border-black border duration-[0.5s] hover:text-black hover:bg-white bg-black  text-white px-[100px] rounded-md py-3">Войти</button>
+                    <a @click="signUp()" class="block cursor-pointer mt-2 underline hover:text-blue-600 text-blue-400">У вас нет аккаунта?</a>
+                </div>
+
+        </div>
     </div>
+
 </template>
 
 <script setup>
 import { ref } from 'vue'
 import { useRouter } from 'vue-router';
 const router = useRouter();
-const register = () => {
+const signUp = () => {
     router.push('signUp');
 }
     let form = ref({
-        email: ''
+        login: '',
+        password: ''
     })
     const send = () => {
-        console.log(form.value.email);
+        console.log(form.value.login);
 
     }
 </script>
