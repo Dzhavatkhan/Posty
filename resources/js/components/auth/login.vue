@@ -5,8 +5,9 @@
                     <p class=" text-[36px]" >Авторизация</p>
                 </div>
                 <div class="form_body flex flex-col items-center gap-y-[35px]">
-                    <input v-model="form.login" type="text" class=" rounded-md pl-3 text-xl border-gray-400 focus:border-black h-[35px] w-[215px] border outline-none" placeholder="Логин">
-                    <input v-model="form.password" type="text" class=" rounded-md outline-none w-[215px] pl-3 text-xl border-gray-400 focus:border-black h-[35px] border" placeholder="Пароль">
+                    <input v-model="form.login" type="text" class=" pl-3 text-xl border-gray-400 focus:border-black h-[35px] w-[256px] border-b outline-none" placeholder="Логин">
+                    <img @click="hiddenPassword()" ref="hiddenPass" class="hidPas cursor-pointer w-5 absolute top-[488px] ml-[200px]" src="http://127.0.0.1:8000/image/free-icon-eye-159604.png" alt="">
+                    <input v-model="form.password" type="password" class="pass w-[256px] outline-none  pl-3 text-xl border-gray-400 focus:border-black h-[35px] border-b"  placeholder="Пароль">
                 </div>
                 <div class="form_footer">
                     <button @click="send()" class="text-xl hover:border-black border duration-[0.5s] hover:text-black hover:bg-white bg-black  text-white px-[100px] rounded-md py-3">Войти</button>
@@ -32,6 +33,16 @@ const signUp = () => {
     const send = () => {
         console.log(form.value.login);
 
+    }
+    const hiddenPassword = () => {
+       let password = document.querySelector(".pass");
+       if (password.type == "password") {
+            password.type = "text";
+
+       }
+       else{
+        password.type = "password";
+       }
     }
 </script>
 
